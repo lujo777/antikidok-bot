@@ -1,12 +1,5 @@
-<<<<<<< HEAD
 {
     "require": {
         "ext-mysql": "*"
     }
-=======
-{
-    "require": {
-        "ext-mysql": "*"
-    }
->>>>>>> fdca125334aa526d26feb602e78f0ec009cb4661
 }
