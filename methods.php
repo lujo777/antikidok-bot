@@ -23,7 +23,7 @@
 	function CheckMessage($userdata)
 	{
 		$message = $userdata->object->body;
-		$msg = $message;
+		$msg = mb_strtolower($message);
 		global $autoMessages;
 		$returnMessage = CheckCommand($userdata->object->user_id, $msg);
 		
