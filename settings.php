@@ -20,4 +20,7 @@
 	$mysqlHost = $url["host"]; //Хост (адрес) MySQL
 	
 	$startMoney = 500; //Стартовый баланс для пользователя
+
+	//$crapiToken = 956f114cc63d43eb817280b31456c9f25654faf6742c4736b843e745ff161158; Токен cr-api
+	//Будет активно в Alpha 5
 ?>

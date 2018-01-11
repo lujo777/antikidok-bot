@@ -10,6 +10,7 @@
 		$args = preg_split("/[\s,]+/", $message);
 		$stats = GetUserStats($user_id);
 		$msg;
+		$utag;
 		
 		if($args[0] == "баланс" || $args[0] == "банк" || $args[0] == "счет" || $args[0] == "счёт")
 			$msg = "добро пожаловать в банк! &#128182;<br>Ваш баланс составляет: ".$stats["money"]." монет";
@@ -23,10 +24,20 @@
 			$msg = GetProfile($user_id);
 		elseif($args[0] == "перевод" || $args[0] == "переведи" || $args[0] == "отправь" || $args[0] == "отправить")
 			$msg = SendMoney($user_id, $args);
+		//elseif($args[0] == "игрок")	
+		//   $msg = CheckRoyale()
+		//   Alpha 5
 		else
 			$msg = "nullmsg";
 		return $msg;
 	}
+
+   //Функция для Alpha 5
+
+	//function CheckRoyale($utag, $args)
+	//{
+    //
+	//}
 	
 	function SendMoney($user_id, $args)
 	{
