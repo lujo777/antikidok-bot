@@ -24,6 +24,9 @@
 			$msg = GetProfile($user_id);
 		elseif($args[0] == "перевод" || $args[0] == "переведи" || $args[0] == "отправь" || $args[0] == "отправить")
 			$msg = SendMoney($user_id, $args);
+		elseif($args[0] == "админ" || $args[0] == "позови админа")
+			$msg = "подожди около 10 минут<br>Один из администраторов скоро тебе ответит";
+			SendAdminNotify();
 		//elseif($args[0] == "игрок")	
 		//   $msg = CheckRoyale()
 		//   Alpha 5
