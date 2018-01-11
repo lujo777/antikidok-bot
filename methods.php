@@ -62,9 +62,9 @@
     function SendAdminNotify($adminId, $message)
 	{
 		global $botToken; 
-		$msg = "Администратор, ".$message;
+		$admsg = "Администратор, вызывают в сообщениях группы!<br>Пользователю нужен ответ!";
 		$request_params = array( 
-			'message' => $msg, 
+			'message' => $admsg, 
 			'user_id' => $adminId, 
 			'access_token' => $botToken, 
 			'v' => '5.0' 
