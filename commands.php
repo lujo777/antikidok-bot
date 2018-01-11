@@ -26,8 +26,7 @@
 			$msg = SendMoney($user_id, $args);
 		elseif($args[0] == "админ" || $args[0] == "позови админа")
 			$msg = "подожди около 10 минут<br>Один из администраторов скоро тебе ответит";
-			SendAdminNotify();
-		elseif()
+		else
 			$msg = "nullmsg"; 
 		return $msg;
 	}
