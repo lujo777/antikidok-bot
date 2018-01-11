@@ -27,8 +27,9 @@
 		elseif($args[0] == "админ" || $args[0] == "позови админа")
 			$msg = "подожди около 10 минут<br>Один из администраторов скоро тебе ответит";
 			SendAdminNotify();
-		else
+		else {
 			$msg = "nullmsg";
+		}
 		return $msg;
 	}
 
