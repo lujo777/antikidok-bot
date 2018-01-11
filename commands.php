@@ -28,7 +28,7 @@
 			$msg = "подожди около 10 минут<br>Один из администраторов скоро тебе ответит";
 			SendAdminNotify();
 		else {
-			$msg = "nullmsg";
+			$msg = "nullmsg"; 
 		}
 		return $msg;
 	}
