@@ -59,6 +59,20 @@
 		file_get_contents('https://api.vk.com/method/messages.send?'. $get_params);
 	}
 	
+    function SendAdminNotify($adminId, $message)
+	{
+		global $botToken; 
+		$msg = "Администратор, ".$message;
+		$request_params = array( 
+			'message' => $msg, 
+			'user_id' => $adminId, 
+			'access_token' => $botToken, 
+			'v' => '5.0' 
+		);
+		$get_params = http_build_query($request_params); 
+		file_get_contents('https://api.vk.com/method/messages.send?'. $get_params);
+	}
+
 	function GetID($ulink)
 	{
 		$totalSlash = substr_count($ulink, '/');

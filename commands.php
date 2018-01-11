@@ -32,7 +32,14 @@
 		return $msg;
 	}
 
-   //Функция для Alpha 5
+    //Функция для Alpha 5
+
+    //function BaseUpdate() {
+    //
+	//}
+
+
+    //Функция для Alpha 5.5
 
 	//function CheckRoyale($utag, $args)
 	//{
