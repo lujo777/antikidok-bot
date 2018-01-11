@@ -59,7 +59,7 @@
 		file_get_contents('https://api.vk.com/method/messages.send?'. $get_params);
 	}
 	
-    function SendAdminNotify($adminId, $message)
+    function SendAdminNotify($adminId)
 	{
 		global $botToken; 
 		$admsg = "Администратор, вызывают в сообщениях группы!<br>Пользователю нужен ответ!";
