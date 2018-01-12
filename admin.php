@@ -1,8 +1,8 @@
 <?php
 	/*
-		Админ-панель для бота "GameBot"
-		Версия данного бота: 0.01
-		Ссылка на GitHub (возможно вышло обновление, проверьте): https://github.com/DenBroShow/GameBot
+		Админ-панель для бота "vk-antikidok"
+		Версия данного бота: Alpha 5
+		Ссылка на GitHub - github.com/lujo777/antikidok-bot
 	*/
 	
 	$action = $_POST["act"];

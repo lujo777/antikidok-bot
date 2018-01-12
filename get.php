@@ -1,8 +1,8 @@
 <?php
 	/*
-		Файл обработки сообщений "GameBot"
-		Версия данного бота: 0.01
-		Ссылка на GitHub (возможно вышло обновление, проверьте): https://github.com/DenBroShow/GameBot
+		Файл обработки сообщений "vk-antikidok"
+		Версия данного бота: Alpha 5
+		Ссылка на GitHub - github.com/lujo777/antikidok-bot
 	*/
 	
 	include("settings.php");

@@ -1,8 +1,8 @@
 <?php
 	/*
-		Файл команд (обработчик) "GameBot"
-		Версия данного бота: 0.01
-		Ссылка на GitHub (возможно вышло обновление, проверьте): https://github.com/DenBroShow/GameBot
+		Файл команд (обработчик) "vk-antikidok"
+		Версия данного бота: Alpha 5
+		Ссылка на GitHub - github.com/lujo777/antikidok-bot
 	*/
 	
 	function CheckCommand($user_id, $message)
@@ -31,12 +31,45 @@
 		return $msg;
 	}
 
-    //Функция для Alpha 5
 
-    //function BaseUpdate() {
-    //
-	//}
+    function AddKidok($args, $kLink, $kType, $kName, $kTitle, $kPost, $kProofs) {
+		global $mysqlHost, $mysqlUser, $mysqlPass, $mysqlBase;
+		$connect = mysql_connect($mysqlHost, $mysqlUser, $mysqlPass);
+		if(!$connect)
+			die(json_encode(array("response" => 0, "error" => array("error_id" => 3, "error_message" => "Can't connect to MySQL server"))));
+		else
+		{
+			mysql_select_db($mysqlBase, $connect);
+            $query = "INSERT INTO `kidki` (`type`, `link`, `name`, `proofs`, `title`, `additional`) VALUES ('".$kType."', '".$startMoney."', '".time()."')";
+			mysql_query($query, $connect);
+			$query = "SELECT * FROM `kidki` WHERE `link` = '".$kLink."'";
 
+			$request = mysql_query($query, $connect);
+			$kid = mysql_fetch_array($request);
+			return "Добавлен новый кидок с id".$kid."!";
+		}
+	}
+
+
+	function ReturnKid($args, $kLink) {
+		global $mysqlHost, $mysqlUser, $mysqlPass, $mysqlBase;
+		$connect = mysql_connect($mysqlHost, $mysqlUser, $mysqlPass);
+		if(!$connect)
+			die(json_encode(array("response" => 0, "error" => array("error_id" => 3, "error_message" => "Can't connect to MySQL server"))));
+		else
+		{
+			mysql_select_db($mysqlBase, $connect);
+			$query = "SELECT * FROM `kidki` WHERE `link` = '".$kLink."'";
+			$request = mysql_query($query, $connect);
+			   or die("такого человека нет в базе!<br>Но это не значит, что ты можешь быть небдительным ;)");
+			$b = mysql_fetch_array($request);
+			if ($b["type"] == "group")
+				$kidtype = "Такая группа";
+			else 
+			    $kidtype = "Этот человек";
+			return .$kidtype." есть в базе кидков!<br>Имя: ".$b["name"]."<br>Ссылка на кидка: ".$b["link"]."<br>Пруфы: ".$b["proofs"]."ДОВЕРЯТЬ НЕЛЬЗЯ";
+		}
+	}
 
     //Функция для Alpha 5.5
 

@@ -1,8 +1,8 @@
 <?php
 	/*
-		Файл настроек для бота "NewBot"
-		Версия данного бота: 0.01
-		Ссылка на GitHub (возможно вышло обновление, провеcmcmcmрьте): https://github.com/DenBroShow/GameBot
+		Файл настроек для бота "vk-antikidok"
+		Версия данного бота: Alpha 5
+		Ссылка на GitHub - github.com/lujo777/antikidok-bot
 	*/
 
 	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
@@ -28,5 +28,5 @@
 	$startMoney = 500; //Стартовый баланс для пользователя
 
 	//$crapiToken = 956f114cc63d43eb817280b31456c9f25654faf6742c4736b843e745ff161158; Токен cr-api
-	//Будет активно в Alpha 5
+	//Будет активно в Alpha 5.5
 ?>
