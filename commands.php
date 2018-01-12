@@ -64,7 +64,7 @@
 		{
 			mysql_select_db($mysqlBase, $connect);
 			$query = "SELECT * FROM `kidki` WHERE `link` = '".$kLink."'";
-			$request = mysql_query($query, $connect);
+			$request = mysql_query($query, $connect)
 			   or die("такого человека нет в базе!<br>Но это не значит, что ты можешь быть небдительным ;)");
 			$b = mysql_fetch_array($request);
 			if ($b["type"] == "group")
