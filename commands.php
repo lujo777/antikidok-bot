@@ -67,8 +67,8 @@
 			$request = mysql_query($query, $connect);
 			if ( mysql_num_rows($request) < 0) {
 				return "Такой ссылки в базе нет<br>Но будь осторожен!<br>База содержит не всех кидков на свете!"
-			}
-			else {
+			
+			} else {
 			$b = mysql_fetch_array($request);
 			if ($b["type"] == "group")
 				$kidtype = "Такая группа";
