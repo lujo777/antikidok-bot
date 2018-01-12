@@ -26,6 +26,10 @@
 			$msg = SendMoney($user_id, $args);
 		elseif($args[0] == "админ")
 			$msg = "подожди около 10 минут<br>Один из администраторов скоро тебе напишет";
+		elseif($args[0] == "adminkadd")
+			$msg = AddKidok($args, $kLink, $kType, $kName, $kTitle, $kPost, $kProofs);
+		elseif($args[0] == "проверка")		
+		    $msg = ReturnKid($args, $kLink);
 		else
 			$msg = "nullmsg"; 
 		return $msg;
