@@ -65,13 +65,17 @@
 			mysql_select_db($mysqlBase, $connect);
 			$query = "SELECT * FROM `kidki` WHERE `link` = '".$kLink."'";
 			$request = mysql_query($query, $connect)
-			   or die("такого человека нет в базе!<br>Но это не значит, что ты можешь быть небдительным ;)");
+			if ( mysql_num_rows($request) < 0) {
+				return "Такой ссылки в базе нет<br>Но будь осторожен!<br>База содержит не всех кидков на свете!"
+			}
+			else {
 			$b = mysql_fetch_array($request);
 			if ($b["type"] == "group")
 				$kidtype = "Такая группа";
 			else 
 			    $kidtype = "Этот человек";
-			return "опа,".$kidtype."есть в базе кидков!<br>Имя: ".$b["name"]."<br>Ссылка на кидка: ".$b["link"]."<br>Пруфы: ".$b["proofs"]."ДОВЕРЯТЬ НЕЛЬЗЯ";
+				return "опа,".$kidtype." есть в базе кидков!<br>Имя: ".$b["name"]."<br>Ссылка на кидка: ".$b["link"]."<br>Пруфы: ".$b["proofs"]."ДОВЕРЯТЬ НЕЛЬЗЯ";
+			}
 		}
 	}
 
