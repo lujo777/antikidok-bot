@@ -64,7 +64,7 @@
 		{
 			mysql_select_db($mysqlBase, $connect);
 			$query = "SELECT * FROM `kidki` WHERE `link` = '".$kLink."'";
-			$request = mysql_query($query, $connect)
+			$request = mysql_query($query, $connect);
 			if ( mysql_num_rows($request) < 0) {
 				return "Такой ссылки в базе нет<br>Но будь осторожен!<br>База содержит не всех кидков на свете!"
 			}
